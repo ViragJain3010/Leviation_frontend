@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice PDF</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .header .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      background-image: radial-gradient(circle, #0f0f0f, #1a1923, #222236, #2a2c4b, #303661);
+      color: white;
+      padding: 25px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .info .name {
+      font-weight: 700;
+      font-size: 18px;
+      color: #CCF575;
+    }
+
+    .info .email {
+      font-size: 14px;
+      background: white;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+
+    .info .date {
+      font-size: 14px;
+      text-align: right;
+      color: #DDDDDD;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      border-radius: 50%;
+
+    }
+
+    table thead {
+      background-image: linear-gradient(to right, #303661, #003d5e, #003e46, #003b24, #263406);
+      color: white;
+      border-radius: 50%;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 8px;
+      border: none;
+    }
+
+    table tbody tr:nth-child(odd) {
+      background-color: #FFF;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #FAFAFA;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .summary .box {
+      width: 250px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .summary p {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .summary .total {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .footer {
+      background-color: #272833;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 12px;
+      border-radius: 50px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <img src="../public/logo.png">
+      </div>
+      <div class="title">INVOICE GENERATOR</div>
+    </div>
+
+    <!-- Info -->
+    <div class="info">
+      <div>
+        <p style="color: #cccccc; margin-bottom: 10px">Name</p>
+        <p class="name">Person__name</p>
+      </div>
+      <div>
+        <p class="date">Date: 12/04/23</p>
+        <p class="email">example@email.com</p>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Qty</th>
+          <th>Rate</th>
+          <th>Total Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{Product 1}</td>
+          <td>32</td>
+          <td>120</td>
+          <td>USD 100</td>
+        </tr>
+        <tr>
+          <td>{Product 2}</td>
+          <td>32</td>
+          <td>120</td>
+          <td>USD 100</td>
+        </tr>
+        <tr>
+          <td>{Product 3}</td>
+          <td>32</td>
+          <td>120</td>
+          <td>USD 100</td>
+        </tr>
+        <tr>
+          <td>{Product 4}</td>
+          <td>32</td>
+          <td>120</td>
+          <td>USD 100</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Summary -->
+    <div class="summary">
+      <div class="box">
+        <p><span>Total Charges</span><span>₹400</span></p>
+        <p><span>GST (18%)</span><span>₹72</span></p>
+        <p class="total"><span>Total Amount</span><span>₹ 472</span></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        We are pleased to provide any further information you may require and look forward to assisting with your next order. Rest assured, it will receive our prompt and dedicated attention.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
