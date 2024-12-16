@@ -9,7 +9,7 @@ import { RootState } from "@/store/store";
 
 export const AddProductAsync = createAsyncThunk<
   Product[],
-  Product,
+  Product, 
   { state: RootState }
 >("products/add", async (data: Product, { rejectWithValue, getState }) => {
   try {
@@ -109,12 +109,12 @@ export const productsSlice = createSlice({
         state.isLoading = true;
         state.operationType = "add";
       })
-      .addCase(AddProductAsync.fulfilled, (state, action) => {
+      .addCase(AddProductAsync.fulfilled, (state) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.products.push(action.payload);
+        // state.products.push(action.payload);
         state.operationType = "add";
-      })
+      })      
       .addCase(AddProductAsync.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
