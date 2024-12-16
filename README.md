@@ -8,7 +8,6 @@ This is the frontend for the Invoice Generator application. It is built using Re
 - [Configuration](#configuration)
 - [Running the Application](#running-the-application)
 - [Project Structure](#project-structure)
-- [Available Scripts](#available-scripts)
 - [Dependencies](#dependencies)
 
 ## Installation
@@ -34,7 +33,8 @@ Create a `.env` file in the root directory and add the following environment var
 VITE_SERVER_URL=http://localhost:5000
 ```
 
-Running the Application
+## Running the Application
+
 To start the application in development mode, run:
 
 ```sh
