@@ -3,7 +3,7 @@ import { toast } from "@/hooks/use-toast";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/store/store";
 import { useEffect, useState } from "react";
-import { ValidateTokenAsync, resetLogoutFlag } from "@/Slice/Auth.Slice";
+import { ValidateTokenAsync } from "@/Slice/Auth.Slice";
 import { ThunkDispatch } from "@reduxjs/toolkit";
 
 interface ProtectedRouteProps {

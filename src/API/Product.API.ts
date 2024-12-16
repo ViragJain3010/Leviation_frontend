@@ -4,7 +4,7 @@ export interface Product {
   quantity: number;
 }
 
-export interface ProductResponse {
+interface ProductResponse {
   data: Product[];
 }
 
